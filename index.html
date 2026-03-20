@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Farrukh Rizwan Barlas | Portfolio</title>
+  <meta name="description" content="Portfolio of Farrukh Rizwan Barlas, Data Analyst, Cyber Security Professional, and Web Developer.">
+  
+  <!-- JSON-LD Person Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Farrukh Rizwan Barlas",
+      "jobTitle": "Data Analyst | Cyber Security | Web Developer",
+      "description": "Multidisciplinary professional bridging the gap between data insights, digital security, and web innovation.",
+      "url": "https://farrukhrizwanbarlas.com",
+      "sameAs": [
+        "https://youtube.com/@farrukhrizwanbarlas",
+        "https://facebook.com/farrukhrizwanbarlas",
+        "https://instagram.com/farrukhrizwanbarlas",
+        "https://x.com/farrukhrizwanbarlas",
+        "https://linkedin.com/in/farrukhrizwanbarlas",
+        "https://github.com/farrukhrizwanbarlas"
+      ]
+    }
+  </script>
+
+  <style>
+    :root {
+      --primary: #00d1b2;
+      --primary-hover: #00b89c;
+      --bg: #0a0e14;
+      --card-bg: #151b23;
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --whatsapp: #25D366;
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .logo { font-weight: bold; font-size: 1.2rem; color: var(--primary); }
+
+    nav ul { display: flex; list-style: none; gap: 20px; }
+
+    nav a { 
+      text-decoration: none; 
+      color: var(--text-muted); 
+      font-size: 0.9rem; 
+      transition: var(--transition);
+    }
+
+    nav a:hover { color: var(--primary); }
+
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 60px 0;
+    }
+
+    .hero-content h1 { font-size: 3rem; margin-bottom: 10px; line-height: 1.1; }
+    .hero-content h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 20px; }
+    .hero-content p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; }
+
+    .hero-image-container {
+      aspect-ratio: 3 / 4;
+      background: #1c2128;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Visual Placeholder for the user-provided image */
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .btn-group { display: flex; flex-wrap: wrap; gap: 15px; }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--primary); color: #000; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+    .btn-outline { border: 1px solid #30363d; color: var(--text-main); background: transparent; }
+    .btn-outline:hover { background: #30363d; }
+
+    .freelance-links { margin-top: 20px; display: flex; gap: 15px; }
+    .freelance-links a { color: var(--accent); text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid transparent; }
+    .freelance-links a:hover { border-bottom-color: var(--accent); }
+
+    /* Skills Animation */
+    section { padding: 80px 0; }
+    h3 { font-size: 2rem; margin-bottom: 40px; text-align: center; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-item { margin-bottom: 20px; }
+    .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
+    .skill-bar-bg { background: #30363d; height: 10px; border-radius: 5px; overflow: hidden; }
+    .skill-bar-fill { 
+      background: var(--primary); 
+      height: 100%; 
+      width: 0; 
+      border-radius: 5px; 
+      transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1); 
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid #30363d;
+      border-radius: var(--radius);
+      padding: 25px;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .project-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+    .project-card h4 { margin-bottom: 10px; font-size: 1.2rem; }
+    .project-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px; }
+    
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+    .tag { font-size: 0.75rem; background: #1c2128; padding: 4px 10px; border-radius: 4px; color: var(--accent); border: 1px solid #30363d; }
+
+    /* Social Presence */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .social-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .social-item:hover { color: var(--primary); }
+    .social-item svg { width: 32px; height: 32px; fill: currentColor; }
+
+    /* Contact Section */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      background: #1c2128;
+      border: 1px solid #30363d;
+      padding: 12px;
+      border-radius: 6px;
+      color: white;
+      width: 100%;
+    }
+
+    .fast-channels {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: var(--radius);
+    }
+
+    .channel-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+      color: var(--text-main);
+      padding: 15px 0;
+      border-bottom: 1px solid #30363d;
+      transition: var(--transition);
+    }
+
+    .channel-link:last-child { border-bottom: none; }
+    .channel-link:hover { color: var(--primary); }
+    .channel-link.whatsapp svg { fill: var(--whatsapp); width: 24px; height: 24px; }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      border-radius: var(--radius);
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid #30363d;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero, .contact-wrapper { grid-template-columns: 1fr; }
+      .hero { text-align: center; }
+      .hero-image-container { max-width: 300px; margin: 0 auto; order: -1; }
+      .btn-group { justify-content: center; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="container">
+    <div class="logo">FARUKH RIZWAN BARLAS</div>
+    <ul>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+	  <li><a href="#contact">Social Presence</a></li>
+	  <li><a href="#contact">Blog</a></li>
+    </ul>
+  </nav>
+
+  <header class="container hero">
+    <div class="hero-content">
+      <h2>Data Analyst | Cyber Security | Web Developer</h2>
+      <h1>Farrukh Rizwan Barlas</h1>
+      <p>Multidisciplinary professional bridging the gap between data insights, digital security, and web innovation.With expertise in data analysis, cybersecurity, and web development, I bring a unique perspective to solving complex problems.</p>
+      
+      <div class="btn-group">
+        <a href="https://wa.me/0000000000" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-1.557-.594-2.214-1.154-.88-.75-1.474-1.622-1.747-2.127-.273-.506-.273-.837-.273-.837 0-.75.385-1.113.521-1.256.136-.143.299-.172.397-.172.1 0 .199.01.286.01.086 0 .202-.033.315.238.114.273.391.956.424 1.025.033.068.055.148.01.238-.045.09-.068.145-.136.223-.068.077-.143.155-.192.21-.06.063-.124.132-.054.252.07.121.312.514.671.834.461.411.85.539.969.608.119.069.188.058.258-.023.07-.081.299-.348.379-.467.08-.119.159-.1.267-.059.108.041.681.32.798.378.117.058.195.088.223.138.028.05.028.29-.116.696z"/></svg>
+          Connect WhatsApp
+        </a>
+        <a href="#" class="btn btn-outline">Visit Blog</a>
+      </div>
+
+      <div class="freelance-links">
+        <a href="#">Fiverr Profile</a>
+        <span>|</span>
+        <a href="#">Upwork Profile</a>
+      </div>
+    </div>
+
+    <div class="hero-image-container">
+      <!-- Image path from user's attachment -->
+      <img src="D:\WEBSITES\portfolio website\images\mirza farrukh rizwan baig.jpg" alt="Farrukh Rizwan Barlas Portrait">
+    </div>
+  </header>
+
+  <section id="skills" class="container">
+    <h3>Expertise</h3>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <div class="skill-info"><span>Data Analysis</span><span>90%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>Cyber Security</span><span>85%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>Web Development</span><span>90%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>Cyber Laws</span><span>90%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>Educational Content Strategy</span><span>95%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>Digital Creation</span><span>95%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span>Software Development</span><span>80%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80%"></div></div>
+      </div>
+	  <div class="skill-item">
+        <div class="skill-info"><span>Presentation Skills</span><span>95%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="container">
+    <h3>Portfolio Projects</h3>
+    <div class="projects-grid">
+      <!-- Project 1: Data Analysis Focus -->
+      <div class="project-card" onclick="showProject('InsightStream ETL Dashboard', 'A robust data pipeline using Python (Pandas/SQLAlchemy) that automates the extraction and cleaning of sales data from disparate sources, feeding a real-time Tableau/PowerBI dashboard for trend forecasting.', ['Python', 'SQL', 'Tableau', 'Data Modeling'])">
+        <div class="tags"><span class="tag">Data Analysis</span><span class="tag">Automation</span></div>
+        <h4>InsightStream ETL Pipeline</h4>
+        <p>Automated data harvesting and cleaning pipeline with 99.9% processing accuracy.</p>
+        <div class="tag">Contact for details</div>
+      </div>
+
+      <!-- Project 2: Security Focus -->
+      <div class="project-card" onclick="showProject('VulnScan Sentinel', 'An intermediate-level security tool that uses Python and the Nmap library to perform automated network discovery, port scanning, and version detection, cross-referencing results with known CVE databases.', ['Python', 'Nmap API', 'Network Security', 'Linux'])">
+        <div class="tags"><span class="tag">Cyber Security</span><span class="tag">Tooling</span></div>
+        <h4>VulnScan Sentinel</h4>
+        <p>Custom network vulnerability scanner for small-to-medium business infrastructure audits.</p>
+        <div class="tag">Contact for details</div>
+      </div>
+
+      <!-- Project 3: Web Dev Focus -->
+      <div class="project-card" onclick="showProject('SecureAdmin Hub', 'A full-stack administrative dashboard built with a focus on security best practices (JWT, Sanitzation, CSRF protection). Features include role-based access control and encrypted log management.', ['JavaScript', 'Node.js', 'NoSQL', 'Security'])">
+        <div class="tags"><span class="tag">Web Development</span><span class="tag">Security</span></div>
+        <h4>SecureAdmin Full-Stack Hub</h4>
+        <p>Responsive management portal with high-level authentication and data encryption layers.</p>
+        <div class="tag">Contact for details</div>
+      </div>
+	  
+	  <!-- Project 4: Data Analysis Focus -->
+      <div class="project-card" onclick="showProject('SecureAdmin Hub', 'A full-stack administrative dashboard built with a focus on security best practices (JWT, Sanitzation, CSRF protection). Features include role-based access control and encrypted log management.', ['JavaScript', 'Node.js', 'NoSQL', 'Security'])">
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Tableau</span></div>
+        <h4>Data Analysis Dashboard</h4>
+        <p>Interactive dashboard for visualizing complex datasets with real-time analytics and customizable reporting features.</p>
+        <div class="tag">Contact for details</div>
+      </div>
+	  <!-- Project 5: Software Dev Focus -->
+      <div class="project-card" onclick="showProject('SecureAdmin Hub', 'A full-stack administrative dashboard built with a focus on security best practices (JWT, Sanitzation, CSRF protection). Features include role-based access control and encrypted log management.', ['JavaScript', 'Node.js', 'NoSQL', 'Security'])">
+        <div class="tags"><span class="tag">React.js</span><span class="tag">Python</span><span class="tag">Database</span><span class="tag">ERP</span></div>
+        <h4>School Management System</h4>
+        <p>A comprehensive software designed to streamline academic and administrative workflows.for student records, grading, attendance, fee management, and communication.</p>
+        <div class="tag">Contact for details</div>
+      </div>
+	  
+	  <!-- Project 6: Web Dev Focus -->
+      <div class="project-card" onclick="showProject('SecureAdmin Hub', 'A full-stack administrative dashboard built with a focus on security best practices (JWT, Sanitzation, CSRF protection). Features include role-based access control and encrypted log management.', ['JavaScript', 'Node.js', 'NoSQL', 'Security'])">
+        <div class="tags"><span class="tag">React.js</span><span class="tag">MongoDB</span><span class="tag">Node.js</span></div>
+        <h4>E-commerce Platform</h4>
+        <p>Full-featured online shopping experience with secure payment processing and inventory management system.</p>
+        <div class="tag">Contact for details</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="social" class="container">
+    <h3>Social Presence</h3>
+    <div class="social-links">
+      <a href="#" class="social-item">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <span>YouTube</span>
+      </a>
+      <a href="#" class="social-item">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span>Facebook</span>
+      </a>
+      <a href="#" class="social-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        <span>Instagram</span>
+      </a>
+      <a href="#" class="social-item">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>X</span>
+      </a>
+      <a href="#" class="social-item">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 .001-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <a href="#" class="social-item">
+        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h3>Get In Touch</h3>
+    <div class="contact-wrapper">
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!'); this.reset();">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Project details or Inquiry..." required></textarea>
+        <button type="submit" class="btn btn-primary">Send Secure Message</button>
+      </form>
+
+      <div class="fast-channels">
+        <h4 style="margin-bottom: 20px;">Fast Channels</h4>
+        <a href="https://wa.me/0000000000" class="channel-link whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a href="mailto:{{EMAIL}}" class="channel-link">
+          Email: {{EMAIL}}
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{EMAIL}}" target="_blank" class="channel-link">
+          Compose in Gmail
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Farrukh Rizwan Barlas. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h3 id="m-title" style="text-align: left; margin-bottom: 15px;"></h3>
+      <div id="m-tags" class="tags"></div>
+      <p id="m-desc" style="color: var(--text-muted); margin-bottom: 25px;"></p>
+      <button class="btn btn-primary" onclick="closeModal()">Close Details</button>
+    </div>
+  </div>
+
+  <script>
+    // Animate skills on scroll
+    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.getAttribute('data-width');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    skillBars.forEach(bar => skillObserver.observe(bar));
+
+    // Project Modal logic
+    const modal = document.getElementById('projectModal');
+    function showProject(title, desc, tags) {
+      document.getElementById('m-title').innerText = title;
+      document.getElementById('m-desc').innerText = desc;
+      const tagsContainer = document.getElementById('m-tags');
+      tagsContainer.innerHTML = '';
+      tags.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.innerText = t;
+        tagsContainer.appendChild(span);
+      });
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outside click
+    window.onclick = function(event) {
+      if (event.target == modal) closeModal();
+    }
+  </script>
+</body>
+</html>
